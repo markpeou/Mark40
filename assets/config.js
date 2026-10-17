@@ -6,9 +6,14 @@ window.MARK40 = {
   // Paste your Google Apps Script web app URL here. Empty = preview mode (saves in the browser only).
   API_URL: "",
 
-  // Vote-only mode: paste your Google Form link. The vote box on every page shows that form, and RSVPs show
-  // "opening soon". Leave empty once the backend (API_URL) is set up.
-  VOTE_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLSfoNWXEmxFdriKa4mSjj1wkrOzfN9qFL-TuahYKZfnYJEvN-Q/viewform",
+  // Vote-only mode (no backend yet): votes are sent from the site's own vote box into this Google Form.
+  // While API_URL is empty and this is set, RSVPs show "opening soon". Values must match the form's choices exactly.
+  VOTE_FORM: {
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSfoNWXEmxFdriKa4mSjj1wkrOzfN9qFL-TuahYKZfnYJEvN-Q/formResponse",
+    nameEntry: "entry.312490765",
+    pickEntry: "entry.1234952263",
+    values: { angkor: "Option 1 - Saigon & Siam Reap", danang: "Option 2 - Saigon & Da Nang" }
+  },
 
   host: "Mark",
   title: "Mark 40",

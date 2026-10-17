@@ -360,21 +360,9 @@ function renderVoteOpts(){
   const box=$('#vote-opts'); if(!box) return;
   box.innerHTML=Object.entries(M.options).map(([k,o])=>`<input type="radio" name="vopt" id="v-${k}" value="${k}"><label for="v-${k}" class="o${o.n}"><span class="tick"></span><span class="num">${esc(o.label)}</span><strong>${esc(o.name)}</strong><span class="sm">${esc(o.blurb||'')}</span></label>`).join('');
 }
-const FORM_MODE=!!(M.VOTE_FORM_URL&&!M.API_URL);
+const FORM_MODE=!!(M.VOTE_FORM&&!M.API_URL);
 function formMode(){
   if(!FORM_MODE) return;
-  const panel=$('#vote-panel'); if(panel&&!panel.querySelector('.formvote')){
-    ['#vote-form','#vote-done','#vote-results'].forEach(q=>{ const el=$(q); if(el) el.hidden=true });
-    const src=M.VOTE_FORM_URL.split('?')[0]+'?embedded=true';
-    const d=document.createElement('div'); d.className='formvote';
-    const open=M.VOTE_FORM_URL.split('?')[0], live=/github\.io$/.test(location.hostname);
-    d.innerHTML=`<div class="vote-opts static">${Object.values(M.options).map(o=>`<div class="o${o.n}"><span class="num">${esc(o.label)}</span><strong>${esc(o.name)}</strong><span class="sm">${esc(o.blurb||'')}</span></div>`).join('')}</div>
-      <a class="btn primary" href="${esc(open)}" target="_blank" rel="noopener">Vote now: name + pick</a>
-      ${live?`<iframe title="Vote form" src="${esc(src)}" loading="lazy" height="620">Loading…</iframe>`:''}
-      <p class="small muted">Takes 10 seconds. Results are shared once voting closes.</p>`;
-    panel.append(d);
-    const sub=$('#vote-sub'); if(sub) sub.textContent='Pick one and add your name. Results stay hidden until Mark closes the vote.';
-  }
   const rs=$('#rsvp'); if(rs&&!rs.dataset.soon){
     rs.dataset.soon='1';
     rs.innerHTML='<div class="sec-head"><p class="eyebrow">RSVP</p><h2>RSVPs open soon</h2><p class="sub">Vote first. Once the trip is picked, RSVP and calendar invites open here.</p></div>';
@@ -382,7 +370,7 @@ function formMode(){
   document.querySelectorAll('a[href="#rsvp"]').forEach(a=>{ if(!a.closest('#vote-done')) a.hidden=true });
 }
 function renderVote(){
-  if(FORM_MODE){ formMode(); return }
+  formMode();
   if(!$('#vote')) return;
   const f=$('#vote-form'), done=$('#vote-done'), res=$('#vote-results'), title=$('#vote-title'), sub=$('#vote-sub');
   if(!sub.dataset.text) sub.dataset.text=sub.textContent;
@@ -417,7 +405,13 @@ function wireVote(){
     if(!opt){ say('Pick option 1 or option 2.'); return }
     const btn=$('#vote-btn'); btn.disabled=true; btn.textContent='Sending…';
     try{
-      const res=await api('vote',{voter,name,option:opt,website:$('#v-website').value});
+      let res;
+      if(FORM_MODE){
+        if($('#v-website').value) res={ok:true};
+        else if(vote.mine) res={ok:false,error:'already',mine:vote.mine};
+        else { const F=M.VOTE_FORM, fd=new URLSearchParams(); fd.set(F.nameEntry,name); fd.set(F.pickEntry,F.values[opt]);
+          await fetch(F.url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:fd.toString()}); res={ok:true} }
+      } else res=await api('vote',{voter,name,option:opt,website:$('#v-website').value});
       if(res.ok){ vote.mine={name,option:opt}; LS.set('m40.vote',vote.mine); vote.editing=false; renderVote(); renderBar(); toast('Vote saved. Thank you!'); celebrate() }
       else if(res.error==='already'){ vote.mine=res.mine; LS.set('m40.vote',vote.mine); renderVote(); renderBar(); toast('You’ve already voted') }
       else if(res.error==='closed'){ vote.open=false; vote.results=res.results||null; renderVote(); renderBar() }
@@ -428,6 +422,7 @@ function wireVote(){
 }
 async function loadVote(){
   if(!$('#vote')) return;
+  if(FORM_MODE){ renderVote(); renderBar(); return }
   try{
     const res=await api('voteStatus',{voter});
     if(res.ok){

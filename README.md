@@ -30,7 +30,7 @@ Without the backend connected (`API_URL` empty), the site runs in preview mode a
 
 ## Vote-only mode (no backend yet)
 
-`VOTE_FORM_URL` in `assets/config.js` is set to a Google Form. While `API_URL` is empty, every page shows that form in the vote box (name + pick, saved to the form's Sheet) and the RSVP section says "RSVPs open soon". Once the backend below is set up, paste the `/exec` URL into `API_URL` and the on-site vote, RSVP and host view take over automatically.
+`VOTE_FORM` in `assets/config.js` points at a Google Form. While `API_URL` is empty, the site's own vote box (name + pick) sends each vote into that form and its Sheet and the RSVP section says "RSVPs open soon". Once the backend below is set up, paste the `/exec` URL into `API_URL` and the on-site vote, RSVP and host view take over automatically.
 
 ## 1. Put the site on GitHub Pages
 
