@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mark 40</title>
+<meta name="description" content="Mark's 40th: 18–26 July 2027, starting and finishing in Saigon. Two options for the middle. Vote and RSVP.">
+<meta name="theme-color" content="#33502e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/mark40.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="#top">Mark <b>40</b></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#plan">The plan</a>
+      <a href="#options">Options</a>
+      <a href="#budget">Budget</a>
+      <a href="#compare">Compare</a>
+      <a href="#vote">Vote</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn primary small" href="#rsvp">RSVP</a>
+  </div>
+</header>
+
+<div class="wide" id="top">
+  <div class="hero cover" data-vine="tl tr" data-vine-size="big" data-monkey="l">
+    <div class="cover-grid">
+      <div>
+        <p class="eyebrow">You're invited</p>
+        <h1 class="mark40"><span>Mark</span><b>40</b></h1>
+        <p class="lede">Nine days in Southeast Asia for my 40th. We start and finish in Saigon. You pick the middle.</p>
+        <div class="facts" id="hero-facts"></div>
+        <div class="countdown">
+          <p class="eyebrow" id="cd-label">RSVP closes in</p>
+          <div class="cd-nums" id="cd">
+            <div><b id="cd-d">--</b><small>days</small></div>
+            <div><b id="cd-h">--</b><small>hrs</small></div>
+            <div><b id="cd-m">--</b><small>min</small></div>
+            <div><b id="cd-s">--</b><small>sec</small></div>
+          </div>
+        </div>
+        <div class="row cta">
+          <a class="btn primary" href="#vote" id="hero-cta">Vote now</a>
+          <a class="btn" href="#options">Compare the options</a>
+        </div>
+      </div>
+      <figure class="route">
+          <svg id="route" viewBox="0 0 450 470" role="img" aria-label="Map of southern Vietnam and Cambodia. Both options fly out of Saigon and back. Option 1 goes west to Siem Reap in Cambodia, Option 2 goes north up the coast to Da Nang.">
+            <defs><radialGradient id="mfade" cx="55%" cy="50%" r="62%"><stop offset=".62" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient>
+              <mask id="mland" maskUnits="userSpaceOnUse" x="0" y="0" width="450" height="470"><rect width="450" height="470" fill="url(#mfade)"/></mask></defs>
+            <g mask="url(#mland)"><path class="land" d="M236.2 -24.8 L243.2 0.1 L271.0 30.3 L300.0 50.6 L323.2 68.0 L336.0 80.8 L346.4 92.4 L359.2 113.2 L375.4 134.7 L381.2 166.6 L394.5 214.7 L399.8 254.8 L407.9 273.9 L392.8 302.9 L391.1 323.2 L381.2 343.5 L358.0 366.7 L340.6 378.3 L300.0 397.4 L269.8 413.7 L250.7 427.6 L230.4 456.6 L201.4 476.9 L166.6 505.9 L137.6 514.6 L140.5 468.2 L146.3 433.4 L119.0 411.4 L101.6 398.6 L62.2 396.9 L44.8 369.6 L31.5 340.6 L10.0 305.8 L-7.4 294.2 L-53.8 294.2 L-53.8 -59.6 L236.2 -59.6 Z"/><path class="coast" d="M236.2 -24.8 L243.2 0.1 L271.0 30.3 L300.0 50.6 L323.2 68.0 L336.0 80.8 L346.4 92.4 L359.2 113.2 L375.4 134.7 L381.2 166.6 L394.5 214.7 L399.8 254.8 L407.9 273.9 L392.8 302.9 L391.1 323.2 L381.2 343.5 L358.0 366.7 L340.6 378.3 L300.0 397.4 L269.8 413.7 L250.7 427.6 L230.4 456.6 L201.4 476.9 L166.6 505.9 L137.6 514.6 L140.5 468.2 L146.3 433.4 L119.0 411.4 L101.6 398.6 L62.2 396.9 L44.8 369.6 L31.5 340.6 L10.0 305.8 L-7.4 294.2"/></g>
+            <ellipse class="lake" cx="94.1" cy="268.1" rx="30" ry="11" transform="rotate(38 94.1 268.1)"/>
+            <text class="country" x="68" y="317">Cambodia</text>
+            <text class="country" x="259" y="184">Vietnam</text>
+            <path id="leg1" class="leg o1" d="M245.5 388.2 Q154.3 269.3 83.1 238.5"/><path id="leg2" class="leg o2" d="M245.5 388.2 Q336.7 253.3 336.0 82.5"/>
+            <circle class="plane o1" r="4.5"><animateMotion dur="7s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;.5;1" calcMode="linear"><mpath href="#leg1"/></animateMotion></circle><circle class="plane o2" r="4.5"><animateMotion dur="8s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;.5;1" calcMode="linear"><mpath href="#leg2"/></animateMotion></circle>
+            <text class="tag o1" x="172" y="339">OPTION 1</text>
+            <text class="tag o2" x="331" y="249">OPTION 2</text>
+            <g class="o1"><circle class="dot" cx="83.1" cy="238.5" r="5"/><text class="city" x="75" y="225">Siem Reap</text></g>
+            <g class="o2"><circle class="dot" cx="336.0" cy="82.5" r="5"/><text class="city" x="254" y="76">Da Nang</text><text class="city sub" x="266" y="108">Hoi An</text><circle class="dot" cx="342.3" cy="92.4" r="3"/></g>
+            <circle class="dot" cx="245.5" cy="388.2" r="9"/><circle class="home" cx="245.5" cy="388.2" r="4.5"/>
+            <text class="city" x="259" y="393">Saigon</text><text class="city sub" x="259" y="409">Start and finish</text>
+          </svg>
+          <figcaption>In and out of Saigon. You choose the middle.</figcaption>
+        </figure>
+    </div>
+    <p class="demo-note" hidden>Preview mode: votes and RSVPs save in this browser only until the backend is connected.</p>
+  </div>
+</div>
+
+<main>
+
+  <section id="admin" class="wrap" hidden>
+    <div class="sec-head"><p class="eyebrow">Host view</p><h2>Guest list and votes</h2></div>
+    <div class="panel stack">
+      <form id="admin-form" class="row" style="gap:.6rem">
+        <div class="field" style="flex:1 1 14rem"><label for="admin-key">Admin key</label><input id="admin-key" type="password" autocomplete="current-password" placeholder="From Code.gs"></div>
+        <button class="btn primary" type="submit" style="align-self:end">Load RSVPs</button>
+      </form>
+      <div id="admin-out" class="stack"></div>
+    </div>
+  </section>
+
+  <section id="plan" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The plan</p>
+      <h2>Saigon, then one of two adventures</h2>
+    </div>
+    <div class="prose">
+      <p>Three nights in Saigon. Four nights somewhere new. One last night back in Saigon. Days are yours; we meet for dinner every night.</p>
+    </div>
+    <div class="panel" style="margin-top:1.5rem">
+      <dl class="kv">
+        <dt>When</dt><dd><span class="js-range">18–26 July 2027</span>, 8 nights</dd>
+        <dt>Meet</dt><dd>Saigon (SGN), Vietnam</dd>
+        <dt>The middle</dt><dd>Siem Reap or Da Nang, 1½ hours' flight away</dd>
+        <dt>Budget</dt><dd>Approx. A$1,400–2,500 per person</dd>
+        <dt>Vote</dt><dd>As soon as you can</dd>
+        <dt>RSVP by</dt><dd><span class="js-rsvpby">1 March 2027</span></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="options" class="wide">
+    <div class="sec-head wrap" style="margin-inline:auto">
+      <p class="eyebrow">The two options</p>
+      <h2>Temples or the coast?</h2>
+    </div>
+    <div class="opts">
+      <article class="opt o1" data-route="1" data-monkey="r">
+        <svg class="art scene" data-scene="angkor" viewBox="40 110 740 300" aria-hidden="true"></svg>
+        <div class="body">
+          <div class="kicker"><span class="num">Option 1</span><span class="chip">Vietnam · Cambodia</span></div>
+          <h3>Saigon + Siem Reap</h3>
+          <p class="tagline">Temples, markets and nightlife.</p>
+          <blockquote>Angkor Wat's ancient temples, Cambodian food, night markets and nightlife. Plus you get to see me speak Khmer.</blockquote>
+          <div class="price"><b data-budget="angkor">A$1,700–2,400</b><span class="small muted">approx. per person</span></div>
+          <a class="btn primary" href="angkor.html">Explore option 1</a>
+        </div>
+      </article>
+      <article class="opt o2" data-route="2">
+        <svg class="art scene" data-scene="danang" viewBox="0 70 800 330" aria-hidden="true"></svg>
+        <div class="body">
+          <div class="kicker"><span class="num">Option 2</span><span class="chip">Vietnam</span></div>
+          <h3>Saigon + Da Nang</h3>
+          <p class="tagline">Beaches, lanterns and coastal vibes.</p>
+          <blockquote>Beaches, great food, Marble Mountains and lantern-lit Hoi An. Plus you get to watch me fumble my Vietnamese.</blockquote>
+          <div class="price"><b data-budget="danang">A$1,400–2,500</b><span class="small muted">approx. per person</span></div>
+          <a class="btn teal" href="danang.html">Explore option 2</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="budget" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Budget</p>
+      <h2>What it costs, roughly</h2>
+      <p>Approximate, per person in AUD: flights, stays, food and activities. Subject to change. Full breakdown in the FAQ.</p>
+    </div>
+    <div class="panel"><div class="budget" id="budget-chart"></div></div>
+  </section>
+
+  <section id="compare" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Side by side</p>
+      <h2>The differences that matter</h2>
+    </div>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead><tr><th></th><th class="o1">Option 1 · Siem Reap</th><th class="o2">Option 2 · Da Nang</th></tr></thead>
+        <tbody>
+          <tr><th>The vibe</th><td>Ancient temples, night markets, nightlife</td><td>Beaches, Hoi An, Marble Mountains</td></tr>
+          <tr><th>Budget</th><td class="mono">≈ <span data-budget="angkor">A$1,700–2,400</span></td><td class="mono">≈ <span data-budget="danang">A$1,400–2,500</span></td></tr>
+          <tr><th>July weather</th><td>Wet season: hot, short afternoon storms</td><td>Dry season: hot, sunny, calm sea</td></tr>
+          <tr><th>Visas</th><td>Vietnam (multiple entry) + Cambodia</td><td>Vietnam only</td></tr>
+          <tr><th>The days</th><td>Free, plus Angkor Wat as the must-do</td><td>Free, with day trips if you're keen</td></tr>
+          <tr><th>Mark's language</th><td>Fluent Khmer</td><td>Sweaty attempts</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="vote" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Vote</p>
+      <h2 id="vote-title">Which one should we do?</h2>
+      <p id="vote-sub">Pick one. Vote soon so we can book. Results stay hidden until the vote closes.</p>
+    </div>
+    <div class="panel" id="vote-panel" data-vine="tr" data-monkey="l">
+      <form id="vote-form" novalidate>
+        <div class="field">
+          <label for="v-name">Your name</label>
+          <input id="v-name" name="vname" type="text" autocomplete="name" maxlength="60">
+        </div>
+        <fieldset>
+          <span class="legend">Your pick</span>
+          <div class="vote-opts" id="vote-opts"></div>
+        </fieldset>
+        <div class="hp" aria-hidden="true"><label for="v-website">Leave this empty</label><input id="v-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="form-foot">
+          <p class="err" id="vote-err" role="alert" hidden></p>
+          <div class="row"><button class="btn primary" type="submit" id="vote-btn">Cast my vote</button></div>
+        </div>
+      </form>
+      <div class="summary" id="vote-done" hidden></div>
+      <div id="vote-results" hidden></div>
+    </div>
+  </section>
+
+  <section id="rsvp" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">RSVP</p>
+      <h2 id="rsvp-title">Are you coming?</h2>
+      <p id="rsvp-sub">By <b class="js-rsvpby">the deadline</b>. One per person. You can change it any time.</p>
+    </div>
+    <div class="panel" id="rsvp-panel" data-vine="tl br" data-monkey="r">
+      <form id="rsvp-form" novalidate>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="80">
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="120">
+          <span class="hint">For your invite and reminders.</span>
+        </div>
+        <fieldset>
+          <span class="legend">Can you make it?</span>
+          <div class="choice">
+            <input type="radio" id="f-yes" name="attending" value="yes"><label for="f-yes"><strong>I'm in</strong><span>Count me in for the trip</span></label>
+            <input type="radio" id="f-no" name="attending" value="no"><label for="f-no"><strong>Can't make it</strong><span>I'll be there in spirit</span></label>
+          </div>
+        </fieldset>
+        <div id="yes-fields" class="stack" style="gap:1.35rem" hidden>
+          <fieldset>
+            <span class="legend">Your dates</span>
+            <div class="dates">
+              <div class="field"><label for="f-arrive" class="small">Arriving in Saigon</label><input id="f-arrive" name="arrive" type="date"></div>
+              <div class="field"><label for="f-depart" class="small">Flying home</label><input id="f-depart" name="depart" type="date"></div>
+            </div>
+            <div class="row"><button type="button" class="btn link small" id="whole-week">I'm there the whole time</button><span class="hint" id="nights-note"></span></div>
+          </fieldset>
+          <fieldset>
+            <span class="legend">Dietary needs and allergies</span>
+            <div class="pills" id="diet"></div>
+          </fieldset>
+          <div class="field">
+            <label for="f-allergy">Allergy details</label>
+            <textarea id="f-allergy" name="dietaryNotes" maxlength="500" placeholder="How serious? Do you carry an EpiPen?"></textarea>
+            <span class="hint">Fish sauce, peanuts and shrimp paste are everywhere here, so be specific.</span>
+          </div>
+          <div class="field">
+            <label for="f-phone">WhatsApp number <span class="muted" style="font-weight:400">(optional)</span></label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="+61 …">
+            <span class="hint">For the trip group chat.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-notes">Anything else? <span class="muted" style="font-weight:400">(optional)</span></label>
+          <textarea id="f-notes" name="notes" maxlength="500" placeholder="Flight times, who you'd like to room with, questions…"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="f-website">Leave this empty</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="form-foot">
+          <p class="err" id="form-err" role="alert" hidden></p>
+          <div class="row">
+            <button class="btn primary" type="submit" id="submit">Send RSVP</button>
+            <button class="btn" type="button" id="cancel-edit" hidden>Cancel</button>
+          </div>
+          <p class="small muted" id="find-wrap">Already replied on another device? <button type="button" class="btn link small" id="find-btn">Email me my edit link</button></p>
+        </div>
+      </form>
+      <div class="summary" id="rsvp-summary" hidden></div>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap">
+    <div class="sec-head"><p class="eyebrow">Questions</p><h2>Good to know</h2></div>
+    <div>
+      <details><summary>When will we know?</summary><p>As soon as the votes are in. Mark will email everyone.</p></details>
+      <details><summary>Can I see the results?</summary><p>Once the vote closes. Until then they're hidden so nobody's swayed.</p></details>
+      <details><summary>Can I come for part of it?</summary><p>Yes. Set your own dates when you RSVP.</p></details>
+      <details><summary>What's the rough budget breakdown?</summary><div class="btable"></div><p class="bnote">Approximate, per person, flying from Melbourne. Subject to change once flights and stays are booked.</p></details>
+      <details><summary>Can we stay in a private villa?</summary><p>Yes, a private villa with a pool is an option in both Siem Reap and Da Nang. Great for a group, and you can share the cost. Rough nightly rates per villa, in AUD:</p><table class="btab"><thead><tr><th>Villa</th><th class="o1">Siem Reap</th><th class="o2">Da Nang</th></tr></thead><tbody><tr><th scope="row">2–3 bedrooms</th><td>A$100–250</td><td>A$180–400</td></tr><tr><th scope="row">4 bedrooms</th><td>A$150–350</td><td>A$250–500</td></tr><tr><th scope="row">5–6 bedrooms</th><td>A$250–500+</td><td>A$350–700+</td></tr></tbody></table><p class="bnote">Approximate and subject to change. The villa rate is per night for the whole villa, not per person. Villa costs aren't set yet, so the budget above is a guide only.</p></details>
+      <details><summary>Do I need a visa?</summary><p>Most people need a Vietnam e-Visa. Option 1 also needs a Cambodian one. Each option page has the links.</p></details>
+      <details><summary>Can I bring my partner?</summary><p>Yes. They vote and RSVP for themselves.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>Mark 40 · <span class="js-range">July 2027</span> · Start and finish in Saigon</span>
+  <span><a href="./">Overview</a> · <a href="angkor.html">Option 1</a> · <a href="danang.html">Option 2</a></span>
+</footer>
+
+<div class="bar" id="bar">
+  <p><span id="bar-label">RSVP by</span><b id="bar-when">—</b></p>
+  <a class="btn primary small" href="#rsvp" id="bar-btn">RSVP</a>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/config.js"></script>
+<script>
+/* Page settings. Shared settings (dates, backend URL, budgets) live in assets/config.js. */
+window.TRIP = {
+  "page": "cover"
+};
+</script>
+<script src="assets/scene-angkor.js"></script>
+<script src="assets/scene-danang.js"></script>
+<script src="assets/mark40.js"></script>
+</body>
+</html>

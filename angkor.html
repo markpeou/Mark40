@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Forty at Angkor</title>
+<meta name="description" content="Mark 40, option 1: Saigon + Siem Reap, 18–26 July 2027.">
+<meta name="theme-color" content="#33502e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/mark40.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="./">Mark <b>40</b></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#destination">Destinations</a>
+      <a href="#expect">The week</a>
+      <a href="#stay">Stay</a>
+      <a href="#cost">Cost</a>
+      <a href="#getting-there">Getting there</a>
+      <a href="#vote">Vote</a>
+    </nav>
+    <div class="switch" aria-label="Options"><a href="angkor.html" aria-current="page">Option 1</a><a href="danang.html">Option 2</a></div>
+    <a class="btn primary small" href="#rsvp">RSVP</a>
+  </div>
+</header>
+
+<div class="wide" id="top">
+  <div class="hero" data-vine="tl tr" data-vine-size="big">
+    <div class="stage">
+      <svg id="scene" class="scene" viewBox="0 -10 800 490" role="img" aria-label="Angkor Wat silhouetted at dawn, reflected in a lily pond between two sugar palms. Monkeys swing from the palms and sit on the temple towers. Tap them, the bananas, the coconuts or the pond."></svg>
+      <div class="sky-title"><p class="eyebrow">Mark 40 · Option 1</p><h1>Forty at Angkor</h1></div>
+    </div>
+    <div class="play">
+      <button class="btn small" type="button" id="toss">Toss a banana</button>
+      <button class="btn small" type="button" id="drop">Drop a coconut</button>
+      <span class="score" id="score" aria-live="polite"></span>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <p class="lede">Saigon street food and rooftops, then jungle temples, night markets and a big birthday night in Siem Reap.</p>
+        <div class="facts" id="hero-facts"></div>
+      </div>
+      <div>
+        <div class="countdown">
+          <p class="eyebrow" id="cd-label">RSVP closes in</p>
+          <div class="cd-nums" id="cd">
+            <div><b id="cd-d">--</b><small>days</small></div>
+            <div><b id="cd-h">--</b><small>hrs</small></div>
+            <div><b id="cd-m">--</b><small>min</small></div>
+            <div><b id="cd-s">--</b><small>sec</small></div>
+          </div>
+        </div>
+        <div class="row cta">
+          <a class="btn primary" href="#vote" id="hero-cta">Vote</a>
+          <a class="btn" href="#expect">See the week</a>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note" hidden>Preview mode: votes and RSVPs save in this browser only until the backend is connected.</p>
+  </div>
+</div>
+
+<main>
+
+  <section id="admin" class="wrap" hidden>
+    <div class="sec-head"><p class="eyebrow">Host view</p><h2>Guest list and votes</h2></div>
+    <div class="panel stack">
+      <form id="admin-form" class="row" style="gap:.6rem">
+        <div class="field" style="flex:1 1 14rem"><label for="admin-key">Admin key</label><input id="admin-key" type="password" autocomplete="current-password" placeholder="From Code.gs"></div>
+        <button class="btn primary" type="submit" style="align-self:end">Load RSVPs</button>
+      </form>
+      <div id="admin-out" class="stack"></div>
+    </div>
+  </section>
+
+  <section id="destination" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The destinations</p>
+      <h2>Saigon, then Siem Reap</h2>
+    </div>
+    <figure class="quote"><p>Angkor Wat's ancient temples, Cambodian food, night markets and nightlife. Plus you get to see me speak Khmer and deal with the locals.</p><cite>Mark</cite></figure>
+    <div class="prose" style="margin-top:1.5rem">
+      <h3>Saigon</h3>
+      <p>Motorbikes, iced coffee and street food at all hours. Scooter food tours, rooftop bars and Bùi Viện walking street.</p>
+      <h3>Siem Reap</h3>
+      <p>A relaxed river town beside Angkor, the world's largest temple complex. Sunrise at Angkor Wat, jungle roots swallowing Ta Prohm, then pool, massages and Pub Street.</p>
+    </div>
+    <div class="panel" style="margin-top:1.5rem">
+      <dl class="kv">
+        <dt>Weather</dt><dd>Wet season: hot, with short afternoon storms. The jungle is at its greenest.</dd>
+        <dt>Money</dt><dd>Dong in Vietnam, US dollars in Cambodia.</dd>
+        <dt>Language</dt><dd>Mark speaks Khmer. Siem Reap is his turf.</dd></dl>
+    </div>
+  </section>
+
+  <section id="expect" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">What to expect</p>
+      <h2>The week, loosely</h2>
+      <p>Angkor Wat is the one must-do. Otherwise: pool, markets, shopping, whatever you like. Dinner together every night.</p>
+    </div>
+    <div class="days" id="days"></div>
+    <div class="panel stack" style="margin-top:1.75rem">
+      <h3>Free time in Siem Reap</h3>
+      <div class="ideas">
+        <div><b>Pool and massages</b><span>US$10 massages. Rainy afternoons are made for it.</span></div>
+        <div><b>Markets and shopping</b><span>Old Market, Night Market, Pub Street.</span></div>
+        <div><b>More temples</b><span>Banteay Srei's pink carvings.</span></div>
+        <div><b>Phnom Kulen</b><span>Sacred mountain, waterfall in full flow.</span></div>
+        <div><b>Cooking class</b><span>Market visit, then cook lunch.</span></div>
+        <div><b>Phare circus</b><span>Cambodian circus. Worth it.</span></div></div>
+    </div>
+  </section>
+
+  <section id="stay" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Where we're staying</p>
+      <h2>Two bases, all together</h2>
+    </div>
+    <div class="stay-grid">
+      <div class="panel stack" data-monkey="l">
+        <div class="row" style="justify-content:space-between"><h3>Saigon hotel</h3><span class="chip draft">Researching</span></div>
+        <p class="muted">Central, walkable to food and bars. 18–21 July and 25 July.</p>
+      </div>
+      <div class="panel stack" data-vine="br" data-monkey="r">
+        <div class="row" style="justify-content:space-between"><h3>Siem Reap villa</h3><span class="chip draft">Researching</span></div>
+        <p class="muted">Private pool villa for the group, near the Old Market. 21–25 July.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cost" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Price point</p>
+      <h2>Approx. <span data-budget="angkor">A$1,700–2,400</span> each</h2>
+      <p>Approximate, per person in AUD: flights, stays, food and activities. Subject to change. Full breakdown in the FAQ.</p>
+    </div>
+    <div class="panel stack" data-monkey="l">
+      <h3>Fixed costs we know</h3>
+      <div class="table-wrap">
+        <table class="cost" id="cost-table">
+          <thead><tr><th>Item</th><th>Per person</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="small muted">All prices approximate and subject to change. <a href="#faq">See the full breakdown</a>.</p>
+    </div>
+  </section>
+
+  <section id="getting-there" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Getting there</p>
+      <h2>What to sort out</h2>
+    </div>
+    <ol class="steps">
+      <li><div><h3>Vietnam e-Visa, multiple entry</h3><p class="muted">US$50 on the <a href="https://evisa.xuatnhapcanh.gov.vn/" target="_blank" rel="noopener">official site</a>. Multiple entry because we leave and come back.</p></div></li>
+      <li><div><h3>Cambodia e-Visa</h3><p class="muted">US$30 on <a href="https://www.evisa.gov.kh/" target="_blank" rel="noopener">evisa.gov.kh</a>, plus the <a href="https://arrival.gov.kh/" target="_blank" rel="noopener">e-Arrival card</a> the week before.</p></div></li>
+      <li><div><h3>Flights</h3><p class="muted">Into Saigon on 18 July, home from Saigon on 26 July. We'll book the Siem Reap leg together.</p></div></li></ol>
+  </section>
+
+  <section id="dates" class="wrap">
+    <div class="sec-head has-swinger">
+      <p class="eyebrow">Key dates</p>
+      <h2>Your trip checklist</h2>
+      <p>Ticks save on this device. RSVP yes and we'll email reminders.</p>
+      <button class="swinger" type="button" id="swinger" aria-label="Swinging monkey"></button>
+    </div>
+    <div class="panel stack">
+      <p class="small" id="next-up">Next up: —</p>
+      <ul class="timeline" id="timeline"></ul>
+      <div class="row"><button class="btn small" type="button" id="add-deadlines">Add deadlines to my calendar</button></div>
+    </div>
+  </section>
+
+  <section id="vote" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Vote</p>
+      <h2 id="vote-title">Which one should we do?</h2>
+      <p id="vote-sub">Pick one. Vote soon so we can book. Results stay hidden until the vote closes.</p>
+    </div>
+    <div class="panel" id="vote-panel" data-vine="tr" data-monkey="l">
+      <form id="vote-form" novalidate>
+        <div class="field">
+          <label for="v-name">Your name</label>
+          <input id="v-name" name="vname" type="text" autocomplete="name" maxlength="60">
+        </div>
+        <fieldset>
+          <span class="legend">Your pick</span>
+          <div class="vote-opts" id="vote-opts"></div>
+        </fieldset>
+        <div class="hp" aria-hidden="true"><label for="v-website">Leave this empty</label><input id="v-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="form-foot">
+          <p class="err" id="vote-err" role="alert" hidden></p>
+          <div class="row"><button class="btn primary" type="submit" id="vote-btn">Cast my vote</button></div>
+        </div>
+      </form>
+      <div class="summary" id="vote-done" hidden></div>
+      <div id="vote-results" hidden></div>
+    </div>
+  </section>
+
+  <section id="rsvp" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">RSVP</p>
+      <h2 id="rsvp-title">Are you coming?</h2>
+      <p id="rsvp-sub">By <b class="js-rsvpby">the deadline</b>. One per person. You can change it any time.</p>
+    </div>
+    <div class="panel" id="rsvp-panel" data-vine="tl br" data-monkey="r">
+      <form id="rsvp-form" novalidate>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="80">
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="120">
+          <span class="hint">For your invite and reminders.</span>
+        </div>
+        <fieldset>
+          <span class="legend">Can you make it?</span>
+          <div class="choice">
+            <input type="radio" id="f-yes" name="attending" value="yes"><label for="f-yes"><strong>I'm in</strong><span>Count me in for the trip</span></label>
+            <input type="radio" id="f-no" name="attending" value="no"><label for="f-no"><strong>Can't make it</strong><span>I'll be there in spirit</span></label>
+          </div>
+        </fieldset>
+        <div id="yes-fields" class="stack" style="gap:1.35rem" hidden>
+          <fieldset>
+            <span class="legend">Your dates</span>
+            <div class="dates">
+              <div class="field"><label for="f-arrive" class="small">Arriving in Saigon</label><input id="f-arrive" name="arrive" type="date"></div>
+              <div class="field"><label for="f-depart" class="small">Flying home</label><input id="f-depart" name="depart" type="date"></div>
+            </div>
+            <div class="row"><button type="button" class="btn link small" id="whole-week">I'm there the whole time</button><span class="hint" id="nights-note"></span></div>
+          </fieldset>
+          <fieldset>
+            <span class="legend">Dietary needs and allergies</span>
+            <div class="pills" id="diet"></div>
+          </fieldset>
+          <div class="field">
+            <label for="f-allergy">Allergy details</label>
+            <textarea id="f-allergy" name="dietaryNotes" maxlength="500" placeholder="How serious? Do you carry an EpiPen?"></textarea>
+            <span class="hint">Fish sauce, peanuts and shrimp paste are everywhere here, so be specific.</span>
+          </div>
+          <div class="field">
+            <label for="f-phone">WhatsApp number <span class="muted" style="font-weight:400">(optional)</span></label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="+61 …">
+            <span class="hint">For the trip group chat.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-notes">Anything else? <span class="muted" style="font-weight:400">(optional)</span></label>
+          <textarea id="f-notes" name="notes" maxlength="500" placeholder="Flight times, who you'd like to room with, questions…"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="f-website">Leave this empty</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="form-foot">
+          <p class="err" id="form-err" role="alert" hidden></p>
+          <div class="row">
+            <button class="btn primary" type="submit" id="submit">Send RSVP</button>
+            <button class="btn" type="button" id="cancel-edit" hidden>Cancel</button>
+          </div>
+          <p class="small muted" id="find-wrap">Already replied on another device? <button type="button" class="btn link small" id="find-btn">Email me my edit link</button></p>
+        </div>
+      </form>
+      <div class="summary" id="rsvp-summary" hidden></div>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap">
+    <div class="sec-head"><p class="eyebrow">Questions</p><h2>Good to know</h2></div>
+    <div>
+      <details><summary>Two visas?</summary><p>Yes: Vietnam (multiple entry) and Cambodia. Both online.</p></details>
+      <details><summary>Isn't July rainy?</summary><p>Short afternoon storms. Temple mornings are usually dry.</p></details>
+      <details><summary>What's the rough budget breakdown?</summary><div class="btable"></div><p class="bnote">Approximate, per person, flying from Melbourne. Subject to change once flights and stays are booked.</p></details>
+      <details><summary>Can we stay in a private villa?</summary><p>Yes, a private villa with a pool is an option in both Siem Reap and Da Nang. Great for a group, and you can share the cost. Rough nightly rates per villa, in AUD:</p><table class="btab"><thead><tr><th>Villa</th><th class="o1">Siem Reap</th><th class="o2">Da Nang</th></tr></thead><tbody><tr><th scope="row">2–3 bedrooms</th><td>A$100–250</td><td>A$180–400</td></tr><tr><th scope="row">4 bedrooms</th><td>A$150–350</td><td>A$250–500</td></tr><tr><th scope="row">5–6 bedrooms</th><td>A$250–500+</td><td>A$350–700+</td></tr></tbody></table><p class="bnote">Approximate and subject to change. The villa rate is per night for the whole villa, not per person. Villa costs aren't set yet, so the budget above is a guide only.</p></details>
+      <details><summary>Can I come for part of it?</summary><p>Yes. Set your own dates when you RSVP.</p></details>
+      <details><summary>Can I bring my partner?</summary><p>Yes. They vote and RSVP for themselves.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>Mark 40 · <span class="js-range">July 2027</span> · Start and finish in Saigon</span>
+  <span><a href="./">Overview</a> · <a href="angkor.html">Option 1</a> · <a href="danang.html">Option 2</a></span>
+</footer>
+
+<div class="bar" id="bar">
+  <p><span id="bar-label">RSVP by</span><b id="bar-when">—</b></p>
+  <a class="btn primary small" href="#rsvp" id="bar-btn">RSVP</a>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/config.js"></script>
+<script>
+/* Page settings. Shared settings (dates, backend URL, budgets) live in assets/config.js. */
+window.TRIP = {
+  "page": "option",
+  "option": "angkor",
+  "milestones": [
+    {
+      "id": "rsvp",
+      "title": "RSVP",
+      "due": "2027-03-01",
+      "detail": "So we can book the right rooms.",
+      "href": "#rsvp"
+    },
+    {
+      "id": "passport",
+      "title": "Check your passport",
+      "due": "2027-03-01",
+      "detail": "Six months' validity from 18 July."
+    },
+    {
+      "id": "deposit",
+      "title": "Pay your deposit",
+      "due": "2027-03-15",
+      "detail": "Details by email once the option is set.",
+      "href": "#cost"
+    },
+    {
+      "id": "flights",
+      "title": "Book flights to Saigon (SGN)",
+      "due": "2027-04-30",
+      "detail": "In 18 July, out 26 July. Send Mark your times."
+    },
+    {
+      "id": "insurance",
+      "title": "Buy travel insurance",
+      "due": "2027-05-15",
+      "detail": "Make sure it covers medical evacuation."
+    },
+    {
+      "id": "balance",
+      "title": "Pay the balance",
+      "due": "2027-06-30",
+      "detail": "Your share of stays and activities.",
+      "href": "#cost"
+    },
+    {
+      "id": "vnvisa",
+      "title": "Vietnam e-Visa (multiple entry)",
+      "due": "2027-07-01",
+      "detail": "US$50. Allow about a week.",
+      "href": "https://evisa.xuatnhapcanh.gov.vn/"
+    },
+    {
+      "id": "khvisa",
+      "title": "Cambodia e-Visa",
+      "due": "2027-07-08",
+      "detail": "US$30. Allow a few days.",
+      "href": "https://www.evisa.gov.kh/"
+    },
+    {
+      "id": "earrival",
+      "title": "Cambodia e-Arrival card",
+      "due": "2027-07-20",
+      "opens": "2027-07-14",
+      "detail": "Opens a week before we land. Five minutes.",
+      "href": "https://arrival.gov.kh/"
+    }
+  ],
+  "days": [
+    {
+      "title": "Arrive in Saigon",
+      "text": "Check in, then rooftop drinks.",
+      "where": "Saigon",
+      "dinner": true
+    },
+    {
+      "title": "Free day",
+      "text": "Scooter food tour, markets, or sleep off the flight.",
+      "where": "Saigon",
+      "dinner": true
+    },
+    {
+      "title": "Free day",
+      "text": "Cu Chi tunnels or the Mekong Delta if you're keen.",
+      "where": "Saigon",
+      "dinner": true
+    },
+    {
+      "title": "Fly to Siem Reap",
+      "text": "Check in, swim.",
+      "where": "Siem Reap",
+      "dinner": true
+    },
+    {
+      "title": "Angkor Wat at sunrise",
+      "text": "Then Bayon and Ta Prohm. Back by lunch.",
+      "where": "Siem Reap",
+      "tag": "Must do",
+      "dinner": true
+    },
+    {
+      "title": "Free day",
+      "text": "Pool, markets, or an idea from below.",
+      "where": "Siem Reap",
+      "dinner": true
+    },
+    {
+      "title": "The birthday night",
+      "text": "Dinner and a big night out. Mark does the talking.",
+      "where": "Siem Reap",
+      "key": true
+    },
+    {
+      "title": "Back to Saigon",
+      "text": "Fly back in the afternoon. Last dinner together.",
+      "where": "Saigon",
+      "dinner": true
+    },
+    {
+      "title": "Fly home",
+      "text": "Whenever your flight is.",
+      "where": "Saigon"
+    }
+  ],
+  "fixed": [
+    {
+      "item": "Vietnam e-Visa",
+      "note": "Multiple entry",
+      "amount": "US$50"
+    },
+    {
+      "item": "Cambodia e-Visa",
+      "note": "",
+      "amount": "US$30"
+    },
+    {
+      "item": "Angkor 3-day pass",
+      "note": "",
+      "amount": "US$62"
+    }
+  ]
+};
+</script>
+<script src="assets/scene-angkor.js"></script>
+<script src="assets/mark40.js"></script>
+</body>
+</html>
